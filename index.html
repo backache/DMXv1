@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function loadXMLDoc(StrIn)
+{
+var xmlhttp;
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+xmlhttp.onreadystatechange=function()
+  {
+  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+    {
+    document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
+    }
+}
+xmlhttp.open("GET","https://agent.electricimp.com/xxxxxxxxxxxxxx?favcolor=%20"+StrIn,true);
+xmlhttp.send();
+}
+</script>
+</head>
+<body>
+
+<h2>DMX AJAX BUTTONS</h2>
+<button type="button" onclick="loadXMLDoc('ff0000')">Red</button>
+<button type="button" onclick="loadXMLDoc('ff6600')">Orange</button>
+<button type="button" onclick="loadXMLDoc('ffff00')">Yellow</button>
+<button type="button" onclick="loadXMLDoc('00ff00')">Green</button>
+<button type="button" onclick="loadXMLDoc('0000ff')">Blue</button>
+<button type="button" onclick="loadXMLDoc('6600ff')">Purple</button>
+<button type="button" onclick="loadXMLDoc('9900cc')">Violet</button>
+<button type="button" onclick="loadXMLDoc('000000')">Black</button>
+<button type="button" onclick="loadXMLDoc('ffffff')">White</button>
+<div id="myDiv"></div>
+<br/>
+<A HREF="5.html">HTML5 colour picker</a>
+
+</body>
+</html>
